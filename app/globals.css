@@ -2,32 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #292930;
+  height: 100%;
+  width: 100%;
+  color: black;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* nav {
+  height: 113px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #292930;
+} */
+
+.container {
+  position: relative;
+  color: white;
+  width: 80%;
+  height: 300px;
+  border-radius: 12px;
+  margin: 3rem 1rem;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  border-radius: 12px;
+}
+
+
+.container:hover .overlay{
+  height: 70%;
+}
+@layer components {
+  .parent {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-7 px-5
+  }
+  .input {
+    @apply h-20 md:h-12 rounded-md 
+  }
+  .input textarea {
+    @apply w-full h-full rounded-md text-2xl pl-3 py-2 outline-none focus:outline-2 focus:outline-[#FFD203]
+  }
+  .input input {
+    @apply w-full h-full rounded-md text-2xl pl-3 outline-none focus:outline-2 focus:outline-[#FFD203]
+  }
+  .logoHeading {
+    @apply text-[#86635F] text-2xl font-semibold
+  }
+  .banner{
+    @apply h-[50%] md:h-[90%] z-0 flex flex-row justify-end
+  }
+  .nav{
+    @apply bg-[#292930] md:h-[10%] md:p-[10px] h-[18%] 
+  }
+  .card{
+    @apply bg-white text-black absolute z-10 md:rounded-xl py-10 px-7 bottom-0 md:bottom-28 md:left-16 w-full md:max-w-[550px] h-[45%] md:h-[350px]
+  }
+  .shop_button {
+    @apply cursor-pointer text-xl bg-[#FFD203] py-5 px-16 md:py-3 md:px-10 font-medium hover:text-[#FFD203] hover:bg-[#292930] duration-200 delay-75 transition-all rounded-lg
+  }
+  .links {
+    @apply text-white m-[10px] text-lg font-medium cursor-pointer hover:text-[#FFD203] transition-all duration-200 delay-75
+  }
+  .overlay {
+    @apply absolute bottom-0 left-0 right-0 rounded-b-xl bg-[#000000bf] w-full overflow-hidden h-0 transition-all duration-500 ease-in-out
+  }
+  .overlay p {
+    @apply text-white text-center text-2xl font-medium md:pt-10
   }
 }
