@@ -68,4 +68,8 @@ body {
   .overlay p {
     @apply text-white text-center text-2xl font-medium md:pt-10
   }
+  .heading {
+    font-size: 40px;
+    line-height: 1;
+  }
 }
