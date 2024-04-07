@@ -68,7 +68,7 @@ const Main = () => {
   return (
     <section id="products" className="bg-white">
       <h1 className="text-4xl font-bold p-5">We deal in </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 pl-10 md:mx-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 pl-5  md:mx-10 ">
         {products_hardware.map((product) => (
           <Product heading={product.heading} src={product.src} />
         ))}
